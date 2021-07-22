@@ -1,9 +1,7 @@
 <?php
 
-$id=$_REQUEST["id"];
-$sub=$_REQUEST["sub"];
-$msg=$_REQUEST["msg"];
-
+$id = $_REQUEST['username'];
+$pass=$_REQUEST['password'];
 
 
 $servername = "localhost";
@@ -18,14 +16,16 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO report(id, subject, content)
-VALUES ('$id', '$sub', '$msg')";
+$sql = "SELECT * FROM warden where wardenID='$id' and password='$pass'";
+$result = $conn->query($sql);
 
-if ($conn->query($sql) === TRUE) {
-  echo "Recorded Successfully";
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "success";
+  }
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  echo "Invalid Credentials";
 }
-
 $conn->close();
 ?>

@@ -5,10 +5,9 @@ $zero="0";
 $status="active";
 
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "termpaper";
-$value1='TokenID:';
+$username = "id16428828_sriram13p";
+$password = "44MFqMCt_IZtlb%}";
+$dbname = "id16428828_termpaper";
 
 $value=$tid;
 
@@ -121,7 +120,7 @@ if ($result->num_rows > 0) {
                <form action="parent1.php" method="post" class="form-group">
 					<div class="form-group">
 					<br>
-					<input type="text" class="form-control" id="tid" name="tid" value='.$value.' placeholder="Token ID" readonly>
+					<input type="text" hidden class="form-control" id="tid" name="tid" value='.$value.' placeholder="Token ID" readonly>
 					</div>
 					<div class="form-group">
 					<select class="form-control" id="stat" name="stat">
@@ -131,7 +130,7 @@ if ($result->num_rows > 0) {
 					</select>
 					</div>
 					<div class="form-group">
-					<button class="form-control">Submits</button>
+					<button class="form-control">Submit</button>
 					</div>
 			</form>
             </div>

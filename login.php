@@ -5,9 +5,9 @@ $pass=$_REQUEST['password'];
 
 
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "termpaper";
+$username = "id16428828_sriram13p";
+$password = "44MFqMCt_IZtlb%}";
+$dbname = "id16428828_termpaper";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

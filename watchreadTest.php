@@ -1,9 +1,6 @@
 <?php
 
-$id=$_REQUEST["id"];
-$sub=$_REQUEST["sub"];
-$msg=$_REQUEST["msg"];
-
+$id = $_REQUEST['username'];
 
 
 $servername = "localhost";
@@ -18,14 +15,14 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO report(id, subject, content)
-VALUES ('$id', '$sub', '$msg')";
+$sql = "SELECT * FROM watchman where empID='$id'";
+$result = $conn->query($sql);
 
-if ($conn->query($sql) === TRUE) {
-  echo "Recorded Successfully";
-} else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo $row["empID"].";".$row["name"];
+  }
 }
-
 $conn->close();
 ?>

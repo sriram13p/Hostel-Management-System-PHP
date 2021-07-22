@@ -1,12 +1,13 @@
 <?php
+$servername = "localhost";
+$username = "id16428828_sriram13p";
+$password = "44MFqMCt_IZtlb%}";
+$dbname = "id16428828_termpaper";
 
 $id = $_REQUEST['username'];
 
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "termpaper";
+
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
