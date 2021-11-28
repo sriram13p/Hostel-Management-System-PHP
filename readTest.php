@@ -22,7 +22,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo $row["studentID"].";".$row["studentName"].";".$row["FatherName"].";".$row["FatherNumber"];
+    echo $row["studentID"].";".$row["studentName"].";".$row["FatherName"].";".$row["FatherNumber"].";".$row["image"];
   }
 }
 $conn->close();
